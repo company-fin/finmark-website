@@ -106,17 +106,32 @@ export const PRODUCTS = [
     label: 'RevRecog AI',
     slug: 'revenue-recognition-automation',
     to: '/revenue-recognition-automation',
-    description: 'Automated revenue recognition with a full audit trail.',
+    description: 'Recognition live from your contracts — and the revenue you never billed.',
     badge: null,
     features: [],
     intro: {
       metaTitle: 'RevRecog AI — Revenue Recognition Automation | FinMark.ai',
-      metaDescription: 'Automates revenue recognition schedules across contracts and billing models, with a defensible audit trail for every entry.',
+      metaDescription: 'Recognition schedules built live from your contracts under ASC 606 and Ind AS 115 — across time and materials, milestone, outcome, retainer and hybrid — with revenue leakage and client margins surfaced while you can still act on them.',
       h1: 'RevRecog AI',
+      // TODO: set uploadDate (ISO 8601). No VideoObject is emitted until it is.
+      // Client names and figures in this recording are fictional, per the
+      // video's own note.
+      video: {
+        youtubeId: 'drizlegXhrU',
+        title: 'Delivered work that was never billed — revenue recognition demo',
+        description:
+          'A walkthrough of RevRecog: contracts in, recognition schedules out under ASC 606 and Ind AS 115, with revenue leakage and client margins visible while there is still time to act on them.',
+        uploadDate: null,
+        poster: null,
+      },
+      // Copy follows the walkthrough above — every capability named here is one
+      // the video demonstrates. No figures are quoted; the ones on screen are
+      // fictional and belong in the demo, not on the page.
       body: [
         'Revenue recognition is where finance teams spend the most careful hours for the least visible output — building schedules contract by contract, adjusting them when billing changes, and defending every number when the auditors arrive.',
-        'RevRecog AI automates revenue recognition schedules across contracts and billing models. Schedules are generated from the contract terms, updated automatically as billing events land, and every recognised entry carries a defensible audit trail showing exactly why it was recognised, when, and under which rule.',
-        'The result is revenue numbers your auditors can trace end to end — without your finance team maintaining the spreadsheet machinery behind them.',
+        'RevRecog AI runs recognition live from the contracts themselves rather than from a month-end spreadsheet. Paste in an MSA and it builds the contract; schedules follow under ASC 606 and Ind AS 115, across time and materials, milestone, outcome-based, retainer and hybrid arrangements.',
+        'It also surfaces what the schedules alone would not. Revenue leakage — work already delivered that was never billed — shows up while there is still time to invoice it, and margin by client is visible without anyone rebuilding the analysis by hand.',
+        'Every recognised entry carries a defensible audit trail showing why it was recognised, when, and under which rule — revenue numbers your auditors can trace end to end, without your finance team maintaining the machinery behind them.',
       ],
     },
   },
