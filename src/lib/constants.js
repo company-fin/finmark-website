@@ -13,11 +13,12 @@ export const NAV_LINKS = [
   { label: 'Contact', to: '/contact' },
 ]
 
-// Nested product structure for the navbar "Products" dropdown.
-// Today there is one product (Accounts Payable). Each product has
-// a set of features that show as sub-items in the dropdown.
-// When more products ship, append new entries here and the dropdown
-// expands automatically.
+// Product catalogue. Drives the navbar dropdown, the footer column, the
+// /demo product picker, the sitemap and llms.txt — adding or removing an
+// entry here propagates to all of them.
+//
+// A removed product needs a 301 in public/_redirects as well, or its old
+// URL starts 404ing for anyone holding a link.
 export const PRODUCTS = [
   {
     label: 'Accounts Payable',
@@ -47,24 +48,6 @@ export const PRODUCTS = [
         'FinMark.ai runs the full invoice-to-ERP workflow end to end. AI captures invoices in any format. Matching happens against live ERP data. Withholding tax is computed automatically against current regulations. Sanity checks catch what AI alone would miss. Approved invoices post back into the ERP, audit-ready.',
         'What used to take finance teams days now takes minutes. The platform is live in production with enterprise customers today.',
         'Built for finance teams that process hundreds of vendor invoices a month, operate inside an established ERP, and spend more time keying data than analysing it.',
-      ],
-    },
-  },
-  {
-    label: 'ERP Audit',
-    slug: 'erp-audit',
-    to: '/erp-audit',
-    description: 'Automated audit and compliance for your ERP.',
-    badge: null,
-    features: [],
-    intro: {
-      metaTitle: 'ERP Audit — Automated Compliance Checks | FinMark.ai',
-      metaDescription: 'Automated ERP audit that finds anomalies, control gaps, and compliance issues in your financial data before your auditors do.',
-      h1: 'ERP Audit',
-      body: [
-        'Your ERP holds all your financial data. FinMark.ai\'s ERP Audit scans it automatically — looking for anomalies, control gaps, duplicate transactions, unauthorized changes, and compliance issues that manual audits miss or find too late.',
-        'Instead of quarterly reviews that surface problems weeks after they happen, ERP Audit runs continuously on your live data. Findings are flagged with full context so your finance team can act immediately — not after the auditor leaves.',
-        'Built on the same AI and ERP integration layer that powers our AP automation product. If you run an ERP, this is the audit tool that actually understands your data.',
       ],
     },
   },
@@ -102,24 +85,6 @@ export const PRODUCTS = [
     },
   },
   {
-    label: 'MT Billing',
-    slug: 'mt-billing',
-    to: '/mt-billing',
-    description: 'Automated billing for multi-tenant platforms.',
-    badge: null,
-    features: [],
-    intro: {
-      metaTitle: 'MT Billing — Multi-Tenant Billing Automation | FinMark.ai',
-      metaDescription: 'Automated billing for multi-tenant platforms. Usage tracking, invoice generation, and reconciliation — built for companies running multi-tenant infrastructure.',
-      h1: 'MT Billing',
-      body: [
-        'Multi-tenant platforms generate complex billing — usage-based charges, per-tenant invoicing, tiered pricing, overage calculations. Most teams cobble this together with spreadsheets and custom scripts that break every time the pricing model changes.',
-        'FinMark.ai\'s MT Billing automates the entire flow — track usage per tenant, generate invoices automatically, reconcile payments, and push everything into your accounting system. No more month-end billing scrambles.',
-        'Built for companies running multi-tenant SaaS, infrastructure platforms, or managed services where billing complexity scales with customer count.',
-      ],
-    },
-  },
-  {
     label: 'P&L Auto Track',
     slug: 'pnl-auto-track',
     to: '/pnl-auto-track',
@@ -152,42 +117,6 @@ export const PRODUCTS = [
         'Revenue recognition is where finance teams spend the most careful hours for the least visible output — building schedules contract by contract, adjusting them when billing changes, and defending every number when the auditors arrive.',
         'RevRecog AI automates revenue recognition schedules across contracts and billing models. Schedules are generated from the contract terms, updated automatically as billing events land, and every recognised entry carries a defensible audit trail showing exactly why it was recognised, when, and under which rule.',
         'The result is revenue numbers your auditors can trace end to end — without your finance team maintaining the spreadsheet machinery behind them.',
-      ],
-    },
-  },
-  {
-    label: 'UnitEcon Tracker',
-    slug: 'unit-economics-tracker',
-    to: '/unit-economics-tracker',
-    description: 'True unit economics at customer, product, and SKU level.',
-    badge: null,
-    features: [],
-    intro: {
-      metaTitle: 'UnitEcon Tracker — Unit Economics Software | FinMark.ai',
-      metaDescription: 'Track true unit economics — cost to serve, contribution margin, and payback — at customer, product, and SKU level.',
-      h1: 'UnitEcon Tracker',
-      body: [
-        'Company-level margins hide the truth. Inside every blended number are customers that make money and customers that quietly lose it, SKUs that carry the business and SKUs that drain it — and most finance teams cannot tell them apart without a week of spreadsheet archaeology.',
-        'UnitEcon Tracker computes true unit economics — cost to serve, contribution margin, and payback — at customer, product, and SKU level, from the transaction data you already have.',
-        'It turns "our margin is 18%" into "these twenty customers are below water and here is why" — the level of detail where pricing, sales, and product decisions actually get made.',
-      ],
-    },
-  },
-  {
-    label: 'Commission Engine AI',
-    slug: 'sales-commission-automation',
-    to: '/sales-commission-automation',
-    description: 'Sales commissions calculated from live deal data.',
-    badge: null,
-    features: [],
-    intro: {
-      metaTitle: 'Commission Engine AI — Sales Commission Automation | FinMark.ai',
-      metaDescription: 'Calculates, validates, and posts sales commissions from live deal and payment data — replacing spreadsheet cycles and payout disputes.',
-      h1: 'Commission Engine AI',
-      body: [
-        'Commission season at most companies means a spreadsheet marathon: finance rebuilds the calculations, sales disputes the numbers, and everyone loses days reconciling versions of the truth.',
-        'Commission Engine AI calculates, validates, and posts sales commissions from live deal and payment data. Plans are encoded once; every payout is computed against actual closed and collected revenue, validated against the plan rules, and posted with a clear trail from deal to payment to commission.',
-        'Sales sees exactly how their number was built, finance stops re-deriving it by hand, and disputes turn into a lookup instead of a negotiation.',
       ],
     },
   },
