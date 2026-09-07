@@ -34,6 +34,18 @@
 # Retired standalone pages → live equivalents
 # ─────────────────────────────────────────────────────
 /request                                                          /demo?product=custom                      301
-/spend-analytics                                                  /mt-billing                               301
+# MT Billing is retired; this used to point at it.
+/spend-analytics                                                  /                                         301
 # NOTE: /accounts-payable-automation/* are now real SEO guide pages
 # (see src/content/clusters.js), so no wildcard redirect here.
+
+# ─────────────────────────────────────────────────────
+# Retired products → homepage
+# These four were removed from the catalogue. Sending them to / rather than
+# to /demo keeps the link equity on a real page and lets the visitor see
+# what is actually offered now.
+# ─────────────────────────────────────────────────────
+/erp-audit                                                        /                                         301
+/mt-billing                                                       /                                         301
+/unit-economics-tracker                                           /                                         301
+/sales-commission-automation                                      /                                         301

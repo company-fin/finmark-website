@@ -13,11 +13,12 @@ export const NAV_LINKS = [
   { label: 'Contact', to: '/contact' },
 ]
 
-// Nested product structure for the navbar "Products" dropdown.
-// Today there is one product (Accounts Payable). Each product has
-// a set of features that show as sub-items in the dropdown.
-// When more products ship, append new entries here and the dropdown
-// expands automatically.
+// Product catalogue. Drives the navbar dropdown, the footer column, the
+// /demo product picker, the sitemap and llms.txt — adding or removing an
+// entry here propagates to all of them.
+//
+// A removed product needs a 301 in public/_redirects as well, or its old
+// URL starts 404ing for anyone holding a link.
 export const PRODUCTS = [
   {
     label: 'Accounts Payable',
@@ -30,6 +31,19 @@ export const PRODUCTS = [
       metaTitle: 'Accounts Payable (AP) Automation Software | FinMark.ai',
       metaDescription: 'AI-powered accounts payable automation. Full invoice-to-ERP workflow — capture, match, validate, approve, post. Live in production with enterprise customers.',
       h1: 'Accounts Payable',
+      // TODO: set uploadDate (ISO 8601). videoSchema stays silent until it is —
+      // Google requires uploadDate for VideoObject and rejects the node
+      // without it, so the video plays but is not yet eligible for a rich
+      // result. Vendor identifiers, bank details and addresses in this
+      // recording are fictional and redacted, per the video's own note.
+      video: {
+        youtubeId: 'tOG6hrj_-PE',
+        title: 'A handwritten bill, posted to the ERP — AP automation demo',
+        description:
+          'Sixty-five invoices — goods, services, marketing, and one handwritten bill — from upload to ERP posting with nothing typed by hand. Three-way matching against PO and GRN, withholding tax by section, VAT verification, duplicate detection, and a full audit trail, with anything that fails held back rather than pushed through.',
+        uploadDate: null,
+        poster: '/stills/accounts-payable.jpg',
+      },
       body: [
         'FinMark.ai runs the full invoice-to-ERP workflow end to end. AI captures invoices in any format. Matching happens against live ERP data. Withholding tax is computed automatically against current regulations. Sanity checks catch what AI alone would miss. Approved invoices post back into the ERP, audit-ready.',
         'What used to take finance teams days now takes minutes. The platform is live in production with enterprise customers today.',
@@ -38,56 +52,35 @@ export const PRODUCTS = [
     },
   },
   {
-    label: 'ERP Audit',
-    slug: 'erp-audit',
-    to: '/erp-audit',
-    description: 'Automated audit and compliance for your ERP.',
-    badge: null,
-    features: [],
-    intro: {
-      metaTitle: 'ERP Audit — Automated Compliance Checks | FinMark.ai',
-      metaDescription: 'Automated ERP audit that finds anomalies, control gaps, and compliance issues in your financial data before your auditors do.',
-      h1: 'ERP Audit',
-      body: [
-        'Your ERP holds all your financial data. FinMark.ai\'s ERP Audit scans it automatically — looking for anomalies, control gaps, duplicate transactions, unauthorized changes, and compliance issues that manual audits miss or find too late.',
-        'Instead of quarterly reviews that surface problems weeks after they happen, ERP Audit runs continuously on your live data. Findings are flagged with full context so your finance team can act immediately — not after the auditor leaves.',
-        'Built on the same AI and ERP integration layer that powers our AP automation product. If you run an ERP, this is the audit tool that actually understands your data.',
-      ],
-    },
-  },
-  {
     label: 'FP&A',
     slug: 'fpa',
     to: '/fpa',
-    description: 'Financial planning, budgeting, and forecasting.',
+    description: 'Runway, hiring impact, and a month you can actually read.',
     badge: null,
     features: [],
     intro: {
-      metaTitle: 'FP&A & Financial Reporting Automation | FinMark.ai',
-      metaDescription: 'Automated financial reporting for enterprise groups. P&L, balance sheet, cash flow, and budget vs actuals — generated from your trial balance and GL data. Live in production.',
+      metaTitle: 'FP&A — Runway, Hiring Impact and a Month You Can Read | FinMark.ai',
+      metaDescription: 'Connect QuickBooks or a spreadsheet and see where the business stands today: real runway that accounts for revenue growth, what moved last month in plain English, and what a hire does to runway before you make the offer.',
       h1: 'FP&A',
+      // TODO: set uploadDate (ISO 8601, e.g. '2026-08-14'). videoSchema stays
+      // silent until it is, because Google requires uploadDate for
+      // VideoObject and rejects the node without it — so the video plays but
+      // is not yet eligible for a video rich result.
+      video: {
+        youtubeId: 'jcNLfqfxJoE',
+        title: 'Adding one engineer costs you 2.4 months of runway. See it before you offer.',
+        description:
+          'A walkthrough of FinMark.ai FP&A: seeing the runway impact of a hiring decision before the offer goes out.',
+        uploadDate: null,
+        poster: '/stills/fpa.jpg',
+      },
+      // Copy follows the product walkthrough above — every claim here is one
+      // the video demonstrates on screen. Nothing has been extrapolated.
       body: [
-        'Month-end reporting at most enterprise groups still means days of spreadsheet work — pulling trial balances, classifying GL lines, and rebuilding the same P&L, balance sheet, and cash flow every month. FinMark.ai\'s FP&A product automates that: upload your trial balance and GL data, and finished management reports come out the other side.',
-        'It goes beyond the core statements — budget vs actuals with annual plans and latest estimates, expense reporting by category, SKU-level margin analysis, rebate analytics, and built-in insights that answer the questions management actually asks at review meetings.',
-        'Built for multi-company groups: each entity gets its own isolated reporting portal, with a consolidated view for the group. Live in production with enterprise groups today, on the same platform that powers our accounts payable automation.',
-      ],
-    },
-  },
-  {
-    label: 'MT Billing',
-    slug: 'mt-billing',
-    to: '/mt-billing',
-    description: 'Automated billing for multi-tenant platforms.',
-    badge: null,
-    features: [],
-    intro: {
-      metaTitle: 'MT Billing — Multi-Tenant Billing Automation | FinMark.ai',
-      metaDescription: 'Automated billing for multi-tenant platforms. Usage tracking, invoice generation, and reconciliation — built for companies running multi-tenant infrastructure.',
-      h1: 'MT Billing',
-      body: [
-        'Multi-tenant platforms generate complex billing — usage-based charges, per-tenant invoicing, tiered pricing, overage calculations. Most teams cobble this together with spreadsheets and custom scripts that break every time the pricing model changes.',
-        'FinMark.ai\'s MT Billing automates the entire flow — track usage per tenant, generate invoices automatically, reconcile payments, and push everything into your accounting system. No more month-end billing scrambles.',
-        'Built for companies running multi-tenant SaaS, infrastructure platforms, or managed services where billing complexity scales with customer count.',
+        'Month-end takes a week, and by the time the numbers arrive the decisions that shaped them have already been made. FinMark.ai\'s FP&A connects to QuickBooks, or to a spreadsheet, and keeps your position current without waiting for a close.',
+        'You get the handful of numbers that actually matter, and a plain-English account of what moved last month and why. Every figure traces back to your books, so anything that looks wrong can be followed to the entry behind it.',
+        'Runway, done properly. Not cash divided by burn — that quietly ignores the fact that revenue is growing, which is usually the difference between the runway you think you have and the runway you actually have.',
+        'And you can plan a hire before you commit to it. Put in a role, a salary and a start date, and see the fully loaded monthly cost and exactly what it does to your runway — while the offer is still a question rather than a liability.',
       ],
     },
   },
@@ -113,53 +106,32 @@ export const PRODUCTS = [
     label: 'RevRecog AI',
     slug: 'revenue-recognition-automation',
     to: '/revenue-recognition-automation',
-    description: 'Automated revenue recognition with a full audit trail.',
+    description: 'Recognition live from your contracts — and the revenue you never billed.',
     badge: null,
     features: [],
     intro: {
       metaTitle: 'RevRecog AI — Revenue Recognition Automation | FinMark.ai',
-      metaDescription: 'Automates revenue recognition schedules across contracts and billing models, with a defensible audit trail for every entry.',
+      metaDescription: 'Recognition schedules built live from your contracts under ASC 606 and Ind AS 115 — across time and materials, milestone, outcome, retainer and hybrid — with revenue leakage and client margins surfaced while you can still act on them.',
       h1: 'RevRecog AI',
+      // TODO: set uploadDate (ISO 8601). No VideoObject is emitted until it is.
+      // Client names and figures in this recording are fictional, per the
+      // video's own note.
+      video: {
+        youtubeId: 'drizlegXhrU',
+        title: 'Delivered work that was never billed — revenue recognition demo',
+        description:
+          'A walkthrough of RevRecog: contracts in, recognition schedules out under ASC 606 and Ind AS 115, with revenue leakage and client margins visible while there is still time to act on them.',
+        uploadDate: null,
+        poster: '/stills/revrecog.jpg',
+      },
+      // Copy follows the walkthrough above — every capability named here is one
+      // the video demonstrates. No figures are quoted; the ones on screen are
+      // fictional and belong in the demo, not on the page.
       body: [
         'Revenue recognition is where finance teams spend the most careful hours for the least visible output — building schedules contract by contract, adjusting them when billing changes, and defending every number when the auditors arrive.',
-        'RevRecog AI automates revenue recognition schedules across contracts and billing models. Schedules are generated from the contract terms, updated automatically as billing events land, and every recognised entry carries a defensible audit trail showing exactly why it was recognised, when, and under which rule.',
-        'The result is revenue numbers your auditors can trace end to end — without your finance team maintaining the spreadsheet machinery behind them.',
-      ],
-    },
-  },
-  {
-    label: 'UnitEcon Tracker',
-    slug: 'unit-economics-tracker',
-    to: '/unit-economics-tracker',
-    description: 'True unit economics at customer, product, and SKU level.',
-    badge: null,
-    features: [],
-    intro: {
-      metaTitle: 'UnitEcon Tracker — Unit Economics Software | FinMark.ai',
-      metaDescription: 'Track true unit economics — cost to serve, contribution margin, and payback — at customer, product, and SKU level.',
-      h1: 'UnitEcon Tracker',
-      body: [
-        'Company-level margins hide the truth. Inside every blended number are customers that make money and customers that quietly lose it, SKUs that carry the business and SKUs that drain it — and most finance teams cannot tell them apart without a week of spreadsheet archaeology.',
-        'UnitEcon Tracker computes true unit economics — cost to serve, contribution margin, and payback — at customer, product, and SKU level, from the transaction data you already have.',
-        'It turns "our margin is 18%" into "these twenty customers are below water and here is why" — the level of detail where pricing, sales, and product decisions actually get made.',
-      ],
-    },
-  },
-  {
-    label: 'Commission Engine AI',
-    slug: 'sales-commission-automation',
-    to: '/sales-commission-automation',
-    description: 'Sales commissions calculated from live deal data.',
-    badge: null,
-    features: [],
-    intro: {
-      metaTitle: 'Commission Engine AI — Sales Commission Automation | FinMark.ai',
-      metaDescription: 'Calculates, validates, and posts sales commissions from live deal and payment data — replacing spreadsheet cycles and payout disputes.',
-      h1: 'Commission Engine AI',
-      body: [
-        'Commission season at most companies means a spreadsheet marathon: finance rebuilds the calculations, sales disputes the numbers, and everyone loses days reconciling versions of the truth.',
-        'Commission Engine AI calculates, validates, and posts sales commissions from live deal and payment data. Plans are encoded once; every payout is computed against actual closed and collected revenue, validated against the plan rules, and posted with a clear trail from deal to payment to commission.',
-        'Sales sees exactly how their number was built, finance stops re-deriving it by hand, and disputes turn into a lookup instead of a negotiation.',
+        'RevRecog AI runs recognition live from the contracts themselves rather than from a month-end spreadsheet. Paste in an MSA and it builds the contract; schedules follow under ASC 606 and Ind AS 115, across time and materials, milestone, outcome-based, retainer and hybrid arrangements.',
+        'It also surfaces what the schedules alone would not. Revenue leakage — work already delivered that was never billed — shows up while there is still time to invoice it, and margin by client is visible without anyone rebuilding the analysis by hand.',
+        'Every recognised entry carries a defensible audit trail showing why it was recognised, when, and under which rule — revenue numbers your auditors can trace end to end, without your finance team maintaining the machinery behind them.',
       ],
     },
   },

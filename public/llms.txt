@@ -13,13 +13,9 @@ Key facts:
 ## Products
 
 - [Accounts Payable Automation](https://finmark.ai/accounts-payable-automation): AI-powered AP automation, live in production. Full invoice-to-ERP workflow: capture, match, validate, compute withholding tax, approve, post.
-- [ERP Audit](https://finmark.ai/erp-audit): Continuous automated audit of live ERP data — anomalies, control gaps, duplicate transactions, compliance issues.
-- [FP&A](https://finmark.ai/fpa): Automated financial reporting for enterprise groups — P&L, balance sheet, cash flow, budget vs actuals (AOP/LE), expense reports, SKU margin, and rebate analytics from trial balance and GL data. Multi-company with per-entity isolation. Live in production.
-- [MT Billing](https://finmark.ai/mt-billing): Multi-tenant billing automation.
+- [FP&A](https://finmark.ai/fpa): Connect QuickBooks or a spreadsheet and see where the business stands without waiting for a close — the few numbers that matter, a plain-English account of what moved last month, runway computed with revenue growth rather than cash divided by burn, and the runway impact of a hire before the offer goes out.
 - [P&L Auto Track](https://finmark.ai/pnl-auto-track): A live P&L that updates as transactions post — margin movement visible the day it happens, not at month-end.
 - [RevRecog AI](https://finmark.ai/revenue-recognition-automation): Automated revenue recognition schedules across contracts and billing models, with a defensible audit trail for every entry.
-- [UnitEcon Tracker](https://finmark.ai/unit-economics-tracker): True unit economics — cost to serve, contribution margin, payback — at customer, product, and SKU level.
-- [Commission Engine AI](https://finmark.ai/sales-commission-automation): Calculates, validates, and posts sales commissions from live deal and payment data.
 
 ## Guides (Accounts Payable Automation)
 

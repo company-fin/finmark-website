@@ -42,13 +42,12 @@ export function breadcrumbSchema(items) {
 
 /**
  * VideoObject — makes a product video eligible for Google's video rich
- * results. Returns null when there is no video id yet, so a page can carry
- * the call before its video exists without emitting a broken node.
- *
- * `uploadDate` must be ISO 8601 and is required by Google.
+ * results. Returns null unless there is both an id AND an uploadDate: Google
+ * requires uploadDate and rejects the node without it, so emitting
+ * `uploadDate: null` is worse than emitting no VideoObject at all.
  */
 export function videoSchema(video) {
-  if (!video || !video.youtubeId) return null
+  if (!video || !video.youtubeId || !video.uploadDate) return null
   return {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',

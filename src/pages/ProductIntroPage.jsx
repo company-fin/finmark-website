@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 import SEO from '../components/seo/SEO'
 import Breadcrumb from '../components/seo/Breadcrumb'
 import PillarFAQ from '../components/seo/PillarFAQ'
+import VideoEmbed from '../components/VideoEmbed'
 import GlowBadge from '../components/ui/GlowBadge'
 import GradientButton from '../components/ui/GradientButton'
 import { PRODUCTS } from '../lib/constants'
@@ -13,6 +14,7 @@ import {
   webPageSchema,
   breadcrumbSchema,
   faqSchema,
+  videoSchema,
 } from '../lib/schema'
 
 /**
@@ -55,6 +57,10 @@ export default function ProductIntroPage({ slug }) {
   // buying objections and earn the FAQ rich result.
   const faqs = getPillarBySlug(product.slug)?.faqs ?? []
 
+  // Product walkthrough, when there is one. Renders nothing otherwise, so the
+  // seven products without a video are untouched.
+  const video = intro.video
+
   return (
     <>
       <SEO
@@ -70,6 +76,7 @@ export default function ProductIntroPage({ slug }) {
           }),
           breadcrumbSchema(breadcrumbItems),
           faqSchema(faqs),
+          videoSchema(video),
         ]}
       />
 
@@ -124,6 +131,19 @@ export default function ProductIntroPage({ slug }) {
           </div>
         </div>
       </section>
+
+      {/* Product walkthrough */}
+      {video?.youtubeId && (
+        <section className="relative pb-4 sm:pb-8">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <VideoEmbed
+              youtubeId={video.youtubeId}
+              title={video.title}
+              poster={video.poster}
+            />
+          </div>
+        </section>
+      )}
 
       {/* FAQs — objection handling next to the CTA, and the FAQPage rich result */}
       {faqs.length > 0 && (
