@@ -1,6 +1,7 @@
 import SEO from '../components/seo/SEO'
 import Hero from '../components/Hero'
 import FeatureTicker from '../components/FeatureTicker'
+import HomeVideo from '../components/HomeVideo'
 import HowItWorks from '../components/HowItWorks'
 import CTA from '../components/CTA'
 import About from '../components/About'
@@ -23,6 +24,7 @@ export default function HomePage() {
       />
       <Hero />
       <FeatureTicker />
+      <HomeVideo />
       <HowItWorks />
       <About />
       <CTA />
