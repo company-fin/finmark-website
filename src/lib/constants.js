@@ -42,7 +42,7 @@ export const PRODUCTS = [
         description:
           'Sixty-five invoices — goods, services, marketing, and one handwritten bill — from upload to ERP posting with nothing typed by hand. Three-way matching against PO and GRN, withholding tax by section, VAT verification, duplicate detection, and a full audit trail, with anything that fails held back rather than pushed through.',
         uploadDate: null,
-        poster: null,
+        poster: '/stills/accounts-payable.jpg',
       },
       body: [
         'FinMark.ai runs the full invoice-to-ERP workflow end to end. AI captures invoices in any format. Matching happens against live ERP data. Withholding tax is computed automatically against current regulations. Sanity checks catch what AI alone would miss. Approved invoices post back into the ERP, audit-ready.',
@@ -72,7 +72,7 @@ export const PRODUCTS = [
         description:
           'A walkthrough of FinMark.ai FP&A: seeing the runway impact of a hiring decision before the offer goes out.',
         uploadDate: null,
-        poster: null,
+        poster: '/stills/fpa.jpg',
       },
       // Copy follows the product walkthrough above — every claim here is one
       // the video demonstrates on screen. Nothing has been extrapolated.
@@ -122,7 +122,7 @@ export const PRODUCTS = [
         description:
           'A walkthrough of RevRecog: contracts in, recognition schedules out under ASC 606 and Ind AS 115, with revenue leakage and client margins visible while there is still time to act on them.',
         uploadDate: null,
-        poster: null,
+        poster: '/stills/revrecog.jpg',
       },
       // Copy follows the walkthrough above — every capability named here is one
       // the video demonstrates. No figures are quoted; the ones on screen are
